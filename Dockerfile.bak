@@ -1,0 +1,4 @@
+FROM ubuntu:16.04
+RUN apt-get update && \
+	apt-get install nano mc wget -y
+RUN useradd -ms /bin/bash -p level0 level0&&su level0
