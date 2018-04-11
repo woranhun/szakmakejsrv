@@ -22,7 +22,7 @@ RUN useradd -ms /bin/bash level00 && \
 	#&& \ 
 
 RUN     echo 'level00:level00' | chpasswd && \
-        echo 'level01:level01' | chpasswd && \
+        echo 'level01:pdmgrw25jds24' | chpasswd && \
 	echo 'level02:level02' | chpasswd && \
 	echo 'level03:level03' | chpasswd && \
 	echo 'level04:level04' | chpasswd && \
@@ -34,6 +34,9 @@ RUN     echo 'level00:level00' | chpasswd && \
 	echo 'level10:level10' | chpasswd
 	# && \
 
+RUN touch /home/level00/jelszo && \
+	echo '#Tudtad? a linuxban minden file még ez is amit most olvasol...\n Ezért a kiterjesztések nem számítanak sokat.\n Ezért tudod olvasni ezt a file-t, ami nem .txt kiterjesztésű :D\n' >> /home/level00/jelszo && \
+	echo 'A jelszó a következő színthez  pedig :pdmgrw25jds24\n' >> /home/level00/jelszo 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
 
