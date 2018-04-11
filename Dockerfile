@@ -9,7 +9,7 @@ ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
 
 RUN useradd -ms /bin/bash level00 && \ 
-	useradd -ms /bin/bash level01 && \ 
+				useradd -ms /bin/bash level01 && \ 
         useradd -ms /bin/bash level02 && \ 
         useradd -ms /bin/bash level03 && \ 
         useradd -ms /bin/bash level04 && \ 
@@ -22,21 +22,25 @@ RUN useradd -ms /bin/bash level00 && \
 	#&& \ 
 
 RUN     echo 'level00:level00' | chpasswd && \
-        echo 'level01:pdmgrw25jds24' | chpasswd && \
-	echo 'level02:level02' | chpasswd && \
-	echo 'level03:level03' | chpasswd && \
-	echo 'level04:level04' | chpasswd && \
+  echo 'level01:csakalinux' | chpasswd && \
+	echo 'level02:pdmgrw25jds24' | chpasswd && \
+	echo 'level03:fehu21421ehakds' | chpasswd && \
+	echo 'level04:192.168.1.11' | chpasswd && \
 	echo 'level05:level05' | chpasswd && \
 	echo 'level06:level06' | chpasswd && \
 	echo 'level07:level07' | chpasswd && \
-        echo 'level08:level08' | chpasswd && \
+  echo 'level08:level08' | chpasswd && \
 	echo 'level09:level09' | chpasswd && \
 	echo 'level10:level10' | chpasswd
 	# && \
 
-RUN touch /home/level00/jelszo && \
-	echo '#Tudtad? a linuxban minden file még ez is amit most olvasol...\n Ezért a kiterjesztések nem számítanak sokat.\n Ezért tudod olvasni ezt a file-t, ami nem .txt kiterjesztésű :D\n' >> /home/level00/jelszo && \
+RUN touch /home/level01/jelszo && \
+	echo '#Tudtad? a linuxban minden file még ez is amit most olvasol...\n Ezért a kiterjesztések nem számítanak sokat.\n Ezért tudod olvasni ezt a file-t, ami nem .txt kiterjesztésű :D\n' >> /home/level01/jelszo && \
 	echo 'A jelszó a következő színthez  pedig :pdmgrw25jds24\n' >> /home/level00/jelszo 
+RUN touch /home/level02/.jelszo && \
+	echo '# A linuxban a .-al kezdődő fileok rejtettek...\n Ezért volt nehezebb megtalálni.\n' >> /home/level02/jelszo && \
+	echo 'A jelszó a következő színthez  pedig :fehu21421ehakds\n' >> /home/level00/jelszo 
+
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
 
