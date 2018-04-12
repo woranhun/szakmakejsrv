@@ -33,13 +33,24 @@ RUN     echo 'level00:level00' | chpasswd && \
 	echo 'level09:level09' | chpasswd && \
 	echo 'level10:level10' | chpasswd
 	# && \
-RUN chmod -R 700 /home
+RUN chmod -R 700 /home/level00/ && \
+	chmod -R 700 /home/level01/ && \
+	chmod -R 700 /home/level02/ && \
+	chmod -R 700 /home/level03/ && \
+	chmod -R 700 /home/level04/ && \
+	chmod -R 700 /home/level05/ && \
+	chmod -R 700 /home/level06/ && \
+	chmod -R 700 /home/level07/ && \
+	chmod -R 700 /home/level08/ && \
+	chmod -R 700 /home/level09/ && \
+	chmod -R 700 /home/level10/
+	# && \
 RUN touch /home/level01/jelszo && \
 	echo '#Tudtad? a linuxban minden file még ez is amit most olvasol...\n Ezért a kiterjesztések nem számítanak sokat.\n Ezért tudod olvasni ezt a file-t, ami nem .txt kiterjesztésű :D\n' >> /home/level01/jelszo && \
-	echo 'A jelszó a következő színthez  pedig :pdmgrw25jds24\n' >> /home/level00/jelszo 
+	echo 'A jelszó a következő színthez  pedig :pdmgrw25jds24\n' >> /home/level01/jelszo 
 RUN touch /home/level02/.jelszo && \
-	echo '# A linuxban a .-al kezdődő fileok rejtettek...\n Ezért volt nehezebb megtalálni.\n' >> /home/level02/jelszo && \
-	echo 'A jelszó a következő színthez  pedig :fehu21421ehakds\n' >> /home/level00/jelszo 
+	echo '# A linuxban a .-al kezdődő fileok rejtettek...\n Ezért volt nehezebb megtalálni.\n' >> /home/level02/.jelszo && \
+	echo 'A jelszó a következő színthez  pedig :fehu21421ehakds\n' >> /home/level02/.jelszo 
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
